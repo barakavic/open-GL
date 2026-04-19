@@ -12,8 +12,6 @@ This project demonstrates basic 2D rendering, object movement, and user input ha
 
 ## Controls
 
-## Controls
-
 | Key        | Action        |
 |------------|--------------|
 | `←` / `A`  | Move left    |
@@ -33,15 +31,20 @@ This project demonstrates basic 2D rendering, object movement, and user input ha
 
 ## Project Structure
 
+```bash
 open-GL-master/
-├── main.cpp        # Entry point and rendering loop
-├── car.h           # Car class definition
-├── car.cpp         # Car logic and movement
-├── road.h          # Road class definition
-├── road.cpp        # Road rendering logic
-├── README.md       # Project documentation
-
-Compiled libraries are excluded via .gitignore
+├── src/
+│   ├── main.cpp        # Entry point and rendering loop
+│   ├── car.cpp         # Car logic and movement
+│   └── road.cpp        # Road rendering logic
+├── include/
+│   ├── car.h           # Car class definition
+│   └── road.h          # Road class definition
+├── build/              # Compiled binaries (ignored)
+├── README.md           # Project documentation
+└── .gitignore
+```
+Compiled libraries are excluded via `.gitignore`.
 
 ## How It Works
 
@@ -64,9 +67,10 @@ Compiled libraries are excluded via .gitignore
 ### Compile (Linux example)
 
 ```bash
-g++ main.cpp car.cpp road.cpp -lGL -lGLU -lglut -o simulator
-./simulator
+g++ src/main.cpp src/car.cpp src/road.cpp -Iinclude -lGL -lGLU -lglut -o build/simulator
+./build/simulator
 ```
+
 ## Possible Improvements
 
 - Collision detection
