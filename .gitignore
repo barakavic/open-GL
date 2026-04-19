@@ -1,0 +1,10 @@
+# Compiled binaries
+sim
+simulation
+simulator
+driving_sim
+road
+
+# Generic
+*.out
+*.o
